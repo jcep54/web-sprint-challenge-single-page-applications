@@ -29,11 +29,16 @@ const App = () => {
   const [orderDetails, setOrderDetails] = useState(initialOrderDetails);
 
   const handleDetailsChange = (name, value) =>{
+    if(name === 'name'){
     validate(name,value)
+    }
     setOrderDetails({...orderDetails,[name]:value})
   }
   const orderSubmit = () =>{
-    //will send to api 
+    axios.post(`https://reqres.in/api/orders`)
+        .then(res => console.log(res))
+        .catch(err => console.error(err))
+        .finally(setOrderDetails(initialOrderDetails))
 
   }
   
@@ -57,7 +62,11 @@ const App = () => {
       <div>
         <Routes>
           <Route path='/' element={<Home/> }/>
-          <Route path='pizza' element={<PizzaForm values={orderDetails} onChange={handleDetailsChange} submitOrder={orderSubmit}/>}/>
+          <Route path='pizza' element={<PizzaForm 
+                                        values={orderDetails} 
+                                        onChange={handleDetailsChange} 
+                                        submitOrder={orderSubmit}
+                                        errors={formErrors}/>}/>
         </Routes>
       </div>
 

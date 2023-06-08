@@ -2,7 +2,7 @@
 
 function PizzaForm (props) {
 
-    const {values, onChange, submitOrder } = props;
+    const {values, onChange, submitOrder, errors} = props;
 
 
     const inputChange = e => {
@@ -15,9 +15,13 @@ function PizzaForm (props) {
         submitOrder()
     }
     return (
-        <div className="pizza_form">
-            <form id="pizza-form" onSubmit={placeOrder}>
+        
 
+            <form id="pizza-form" onSubmit={placeOrder}>
+                <h2>Whatcha want???</h2>
+                <div className="error">
+                    <div>{errors.name}</div>
+                </div>
                 <label> Name:
                     <input
                         id='name-input'
@@ -97,7 +101,7 @@ function PizzaForm (props) {
 
             </form>
 
-        </div>
+       
     )
 }
 
