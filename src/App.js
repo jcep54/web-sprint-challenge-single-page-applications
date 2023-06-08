@@ -25,7 +25,7 @@ const App = () => {
     //will send to api 
   }
 
-  
+
   return (
     <div>
 
@@ -38,7 +38,7 @@ const App = () => {
       <div>
         <Routes>
           <Route path='/' element={<Home/> }/>
-          <Route path='pizza' element={<PizzaForm />}/>
+          <Route path='pizza' element={<PizzaForm values={orderDetails} onChange={handleDetailsChange} submitOrder={orderSubmit}/>}/>
         </Routes>
       </div>
 
