@@ -2,9 +2,16 @@
 
 function PizzaForm (props) {
 
-    const {values, onChange, submitOrder } = props
+    const {values, onChange, submitOrder } = props;
+
+
+    const inputChange = e => {
+        const {name, value, type, checked} = e.target;
+        const useThis = type === 'checkbox' ? checked: value;
+        onChange(name,useThis); 
+     }
     const placeOrder = e =>{
-        e.preventDefault()
+        e.preventDefault();
     }
     return (
         <div className="pizza_form">
@@ -15,6 +22,7 @@ function PizzaForm (props) {
                         id='name-input'
                         name='name'
                         value={values.name}
+                        onChange={inputChange}
                     />
                 </label>
                 <div>
@@ -37,6 +45,8 @@ function PizzaForm (props) {
                             type='checkbox'
                             name='pepperoni'
                             value={values.pepperoni}
+                            checked={values.pepperoni}
+                            onChange={inputChange}
                         />
                     </label>
                     <label> Mushrooms
@@ -44,6 +54,8 @@ function PizzaForm (props) {
                             type='checkbox'
                             name='mushrooms'
                             value={values.mushrooms}
+                            checked={values.mushrooms}
+                            onChange={inputChange}
                         />
                     </label>
                     <label> Pineapple
@@ -51,6 +63,8 @@ function PizzaForm (props) {
                             type='checkbox'
                             name='pineapple'
                             value={values.pineapple}
+                            checked={values.pineapple}
+                            onChange={inputChange}
                         />
 
                     </label>
@@ -59,6 +73,8 @@ function PizzaForm (props) {
                             type='checkbox'
                             name='anchovies'
                             value={values.anchovies}
+                            checked={values.anchovies}
+                            onChange={inputChange}
                         />
 
                     </label>
@@ -72,6 +88,7 @@ function PizzaForm (props) {
                         name='specialrequest'
                         type='text'
                         value={values.specialrequest}
+                        onChange={inputChange}
                         />
                     </label>
                 </div>
