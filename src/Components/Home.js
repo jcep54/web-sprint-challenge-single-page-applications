@@ -3,6 +3,9 @@ export default function Home() {
         <div>
             <h1>Welcome</h1>
             <p>It aint easy being cheesy 🧀</p>
-     </div>
+            
+        </div>
+        
+     
    )
 }

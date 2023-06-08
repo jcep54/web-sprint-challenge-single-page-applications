@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react";
+import React,{useState} from "react";
 import { Routes, Route, Link} from 'react-router-dom';
 import PizzaForm from "./Components/pizzaForm";
 import Home from './Components/Home';
@@ -24,7 +24,7 @@ const initialFormErrors = {
 
 
 const App = () => {
-  const [order, setOrder] = useState([]);
+  // const [order, setOrder] = useState([]);
   const [formErrors, setFromErrors] = useState(initialFormErrors);
   const [orderDetails, setOrderDetails] = useState(initialOrderDetails);
 
@@ -62,18 +62,18 @@ const App = () => {
       <div>
         <Routes>
           <Route path='/' element={<Home/> }/>
-          <Route path='pizza' element={<PizzaForm 
+          <Route path='/pizza' element={<PizzaForm 
                                         values={orderDetails} 
                                         onChange={handleDetailsChange} 
                                         submitOrder={orderSubmit}
                                         errors={formErrors}/>}/>
         </Routes>
       </div>
+              
+      <div >
+        <Link id="order-pizza" to='/pizza' onClick={()=> console.log(window.location.pathname)}>Order Now</Link>
 
-      <nav id="order-pizza">
-        <Link to='pizza'>Order Now!</Link>
-
-      </nav>
+      </div>
 
     </div>
   );
