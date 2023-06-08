@@ -12,6 +12,7 @@ function PizzaForm (props) {
      }
     const placeOrder = e =>{
         e.preventDefault();
+        submitOrder()
     }
     return (
         <div className="pizza_form">
