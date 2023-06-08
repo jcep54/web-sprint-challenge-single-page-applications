@@ -32,7 +32,7 @@ function PizzaForm (props) {
                 </label>
                 <div>
                     <label>Pizza Size:
-                        <select id= 'size-dropdown'>
+                        <select id= 'size-dropdown' value={values.size} name='size' onChange={inputChange}>
                             <option vlue='0'>---Select Size---</option>
                             <option value='1'>small:12"</option>
                             <option value= '2'>meduim: 14"</option>
