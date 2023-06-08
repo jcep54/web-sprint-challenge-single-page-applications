@@ -10,6 +10,7 @@ pepperoni: false,
 mushrooms: false,
 pineapple: false,
 anchovies:false,
+specialrequest: '',
 
 }
 
