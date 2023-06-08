@@ -13,19 +13,21 @@ function PizzaForm () {
                         
                     />
                 </label>
+                <div>
+                    <label>Pizza Size:
+                        <select id= 'size-dropdown'>
+                            <option vlue='0'>---Select Size---</option>
+                            <option value='1'>small:12"</option>
+                            <option value= '2'>meduim: 14"</option>
+                            <option value='3'>large: 16"</option>
 
-                <label>Pizza Size:
-                    <select id= 'size-dropdown'>
+                        </select>
+                        
+                    </label>
+                </div>
 
-                        <option value={`small: 12"`}/>
-                        <option value={`meduim: 14"`}/>
-                        <option value={`large: 16"`}/>
-
-                    </select>
-                    
-                </label>
-
-                <label> Toppings:
+                <div className='topping-options'> 
+                    <h4>Toppings:</h4>
                     <label> Pepperoni
                         <input 
                             type='checkbox'
@@ -54,23 +56,17 @@ function PizzaForm () {
                     </label>
 
 
-                </label>
-                <label>Special Instructions
-                    <input
-                    id="special-instructions"
-                    type='text'
+                </div>
+                <div>
+                    <label>Special Instructions
+                        <input
+                        id="special-instructions"
+                        type='text'
 
-                    />
-                </label>
+                        />
+                    </label>
+                </div>
                 <button id='order-button'>Place Order</button>
-
-
-
-
-
-
-
-
 
             </form>
 

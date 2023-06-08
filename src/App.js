@@ -3,12 +3,29 @@ import { Routes, Route, Link} from 'react-router-dom';
 import PizzaForm from "./Components/pizzaForm";
 import Home from './Components/Home';
 
+const initialOrderDetails = {
+name: '',
+size: '0',
+pepperoni: false,
+mushrooms: false,
+pineapple: false,
+anchovies:false,
 
+}
 
 
 const App = () => {
-  const [order, setOrder] = useState()
+  const [order, setOrder] = useState([]);
+  const [orderDetails, setOrderDetails] = useState(initialOrderDetails);
 
+  const handleDetailsChange = (name, value) =>{
+    setOrderDetails({...orderDetails,[name]:value})
+  }
+  const orderSubmit = () =>{
+    //will send to api 
+  }
+
+  
   return (
     <div>
 
