@@ -18,19 +18,30 @@ anchovies:false,
 specialrequest: '',
 
 }
+const initialFormErrors = {
+   name: '',
+}
 
 
 const App = () => {
   const [order, setOrder] = useState([]);
+  const [formErrors, setFromErrors] = useState(initialFormErrors);
   const [orderDetails, setOrderDetails] = useState(initialOrderDetails);
 
   const handleDetailsChange = (name, value) =>{
-    
+    validate(name,value)
     setOrderDetails({...orderDetails,[name]:value})
   }
   const orderSubmit = () =>{
     //will send to api 
 
+  }
+  
+  const validate = (name, value) => {
+    yup.reach(schema,name)
+      .validate(value)
+      .then(() => setFromErrors({...formErrors, [name]:''}))
+      .catch(err => setFromErrors({...formErrors,[name]: err.errors[0]}))
   }
 
 
