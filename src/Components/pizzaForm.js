@@ -17,7 +17,7 @@ function PizzaForm (props) {
     return (
         
 
-            <form id="pizza-form" onSubmit={placeOrder}>
+        <form id="pizza-form" onSubmit={placeOrder}>
                 <h2>Whatcha want???</h2>
                 <div className="error">
                     <div>{errors.name}</div>
@@ -89,7 +89,7 @@ function PizzaForm (props) {
                 <div>
                     <label>Special Instructions
                         <input
-                        id="special-instructions"
+                        id="special-text"
                         name='specialrequest'
                         type='text'
                         value={values.specialrequest}
@@ -99,7 +99,7 @@ function PizzaForm (props) {
                 </div>
                 <button id='order-button'>Place Order</button>
 
-            </form>
+        </form>
 
        
     )

@@ -55,7 +55,7 @@ const App = () => {
 
       <h1>Za Za Pizza</h1>
 
-      <nav>
+      <nav >
         <Link to='/'>Home</Link>
       </nav>
       
