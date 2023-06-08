@@ -2,6 +2,11 @@ import React,{useState, useEffect} from "react";
 import { Routes, Route, Link} from 'react-router-dom';
 import PizzaForm from "./Components/pizzaForm";
 import Home from './Components/Home';
+import schema from "./validation/pizzaSchema";
+import axios from 'axios';
+import * as yup from 'yup';
+
+
 
 const initialOrderDetails = {
 name: '',
@@ -20,10 +25,12 @@ const App = () => {
   const [orderDetails, setOrderDetails] = useState(initialOrderDetails);
 
   const handleDetailsChange = (name, value) =>{
+    
     setOrderDetails({...orderDetails,[name]:value})
   }
   const orderSubmit = () =>{
     //will send to api 
+
   }
 
 
