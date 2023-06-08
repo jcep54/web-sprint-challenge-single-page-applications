@@ -3,16 +3,18 @@
 function PizzaForm (props) {
 
     const {values, onChange, submitOrder } = props
-
+    const placeOrder = e =>{
+        e.preventDefault()
+    }
     return (
         <div className="pizza_form">
-            <form id="pizza-form">
+            <form id="pizza-form" onSubmit={placeOrder}>
 
                 <label> Name:
                     <input
                         id='name-input'
                         name='name'
-                        
+                        value={values.name}
                     />
                 </label>
                 <div>
@@ -34,18 +36,21 @@ function PizzaForm (props) {
                         <input 
                             type='checkbox'
                             name='pepperoni'
+                            value={values.pepperoni}
                         />
                     </label>
                     <label> Mushrooms
                         <input
                             type='checkbox'
                             name='mushrooms'
+                            value={values.mushrooms}
                         />
                     </label>
                     <label> Pineapple
                         <input
                             type='checkbox'
                             name='pineapple'
+                            value={values.pineapple}
                         />
 
                     </label>
@@ -53,6 +58,7 @@ function PizzaForm (props) {
                         <input
                             type='checkbox'
                             name='anchovies'
+                            value={values.anchovies}
                         />
 
                     </label>
@@ -63,8 +69,9 @@ function PizzaForm (props) {
                     <label>Special Instructions
                         <input
                         id="special-instructions"
+                        name='specialrequest'
                         type='text'
-
+                        value={values.specialrequest}
                         />
                     </label>
                 </div>
