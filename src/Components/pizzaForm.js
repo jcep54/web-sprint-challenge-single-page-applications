@@ -1,6 +1,8 @@
 
 
-function PizzaForm () {
+function PizzaForm (props) {
+
+    const {values, onChange, submitOrder } = props
 
     return (
         <div className="pizza_form">
