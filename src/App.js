@@ -1,10 +1,12 @@
 import React from "react";
 import { Routes, Route, Link} from 'react-router-dom';
+import PizzaForm from "./Components/pizzaForm";
+import Home from './Components/Home';
 const App = () => {
   return (
-    <>
+    <div>
       <h1>Za Za Pizza</h1>
-      <p>It aint easy being cheesy 🧀</p>
+      
       
       <nav id="order-pizza">
         <Link to='pizza'>Order Now!</Link>
@@ -13,11 +15,11 @@ const App = () => {
 
       <div>
         <Routes>
-          <Route path='/' element={<App />}/>
+          <Route path='/' element={<Home/> }/>
           <Route path='pizza' element={<PizzaForm />}/>
         </Routes>
       </div>
-    </>
+    </div>
   );
 };
 export default App;
